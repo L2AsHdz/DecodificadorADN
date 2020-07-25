@@ -6,13 +6,24 @@ public class DecodificadorADN {
 
     private static String secuencia1;
     private static String secuencia2;
+    private static int opcion;
 
     public static void main(String[] args) {
         Interfaz ui = new Interfaz();
 
-        secuencia1 = ui.solicitarSecencia();
-        secuencia2 = ui.solicitarSecencia();
-        ui.mostrarResultado(buscarSubSecuenciaRepetida());
+        do {
+            opcion = ui.menu();
+            if (opcion == 1) {
+                secuencia1 = ui.solicitarSecencia(1);
+                secuencia2 = ui.solicitarSecencia(2);
+                ui.mostrarResultado(buscarSubSecuenciaRepetida());
+            }
+            
+        } while (opcion != 2);
+        
+        
+
+        
     }
 
     private static String buscarSubSecuenciaRepetida() {
