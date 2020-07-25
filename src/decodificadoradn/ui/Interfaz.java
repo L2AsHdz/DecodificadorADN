@@ -43,6 +43,12 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel2.setText("Secuencia 2");
 
+        txt_secuencia2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_secuencia2KeyReleased(evt);
+            }
+        });
+
         btnFind.setText("Buscar sub secuencia");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -94,6 +100,12 @@ public class Interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txt_secuencia2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_secuencia2KeyReleased
+        if (evt.VK_ENTER == evt.getKeyCode()){
+            this.btnFind.doClick();
+        }
+    }//GEN-LAST:event_txt_secuencia2KeyReleased
 
     /**
      * @param args the command line arguments

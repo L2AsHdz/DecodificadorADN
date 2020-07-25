@@ -13,8 +13,8 @@ public class UIController implements ActionListener{
         ui.getBtnFind().addActionListener(this);
     }
     
+    //inicia la interfaz
     public void iniciar(){
-        ui.pack();
         ui.setLocationRelativeTo(null);
         ui.setVisible(true);
     }
@@ -26,12 +26,14 @@ public class UIController implements ActionListener{
             String secuencia2 = ui.getTxt_secuencia2().getText();
             String resultado = buscarSubSecuenciaRepetida(secuencia1, secuencia2);
             
+            //Muestra el resultado en una ventana emergente
             JOptionPane.showMessageDialog(null, resultado, "Resultado", 
                 JOptionPane.INFORMATION_MESSAGE);
             limpiarCampos();
         }
     }
 
+    //metodo encargado de buscar la sub secuencia comun mayor entre las dos secuencias dadas
     private String buscarSubSecuenciaRepetida(String secuencia1, String secuencia2) {
         String temp = "";
         String resultado = "";
@@ -64,10 +66,12 @@ public class UIController implements ActionListener{
         return resultado;
     }
     
+    //crea una matriz bidimensional con las longitudes de las secuencias
+    //coloca el valor 1 en las posiciones donde los caracteres son iguales
     private int[][] crearMatriz(String secuencia1, String secuencia2){
         int[][] matriz = new int[secuencia1.length()][secuencia2.length()];
         for (int i = 0; i < secuencia1.length(); i++) {
-            for (int j = 0; j < secuencia1.length(); j++) {
+            for (int j = 0; j < secuencia2.length(); j++) {
                 if (secuencia1.charAt(i) == secuencia2.charAt(j)) {
                     matriz[i][j] = 1;
                 }
@@ -76,6 +80,7 @@ public class UIController implements ActionListener{
         return matriz;
     }
     
+    //limpia los campos y restablece el foco
     private void limpiarCampos(){
         ui.getTxt_secuencia1().setText("");
         ui.getTxt_secuencia2().setText("");

@@ -95,6 +95,9 @@
         <Component class="javax.swing.JTextField" name="txt_secuencia1">
         </Component>
         <Component class="javax.swing.JTextField" name="txt_secuencia2">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_secuencia2KeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnFind">
           <Properties>
